@@ -1,0 +1,9 @@
+#img-bg{
+    background-image: url("https://st4.depositphotos.com/9999814/i/600/depositphotos_315759616-stock-photo-office-desk-workspace-table-background.jpg");
+
+    min-height: 695px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
