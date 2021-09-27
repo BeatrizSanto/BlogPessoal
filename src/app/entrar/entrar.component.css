@@ -1,0 +1,9 @@
+#img-bg{
+    background-image: url("https://financeone.com.br/wp-content/uploads/2018/07/Cursos-de-Finan%C3%A7as-Pessoais.jpg");
+
+    min-height: 695px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
