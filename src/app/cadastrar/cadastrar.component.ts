@@ -1,8 +1,9 @@
+
+import { AuthService } from './../service/auth.service';
+import { UserLogin } from './../model/UserLogin';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { User } from '../model/User';
-import { UserLogin } from '../model/UserLogin';
-import { AuthService } from '../service/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar',
@@ -14,10 +15,12 @@ export class CadastrarComponent implements OnInit {
   user: User = new User
   confirmarSenha: string
   tipoUsuario: string
+  alertas: any;
 
   constructor(
     private authService: AuthService,
-    private  router: Router
+    private router: Router,
+  
   ) { }
 
   ngOnInit() {
@@ -31,7 +34,6 @@ export class CadastrarComponent implements OnInit {
   }
   tipoUser(event:any){
     this.tipoUsuario= event.tanget.value
-
   }
 
   cadastrar(){
@@ -49,4 +51,4 @@ this.authService.cadastrar(this.user).subscribe((resp: User) => {
     }
     
   }
-}
+} 

@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Tema } from '../model/Tema';
-import { TemaService } from '../service/tema.service';
-import { environment } from './../../environments/environment.prod';
 
 @Component({
   selector: 'app-tema',
@@ -11,36 +7,9 @@ import { environment } from './../../environments/environment.prod';
 })
 export class TemaComponent implements OnInit {
 
-tema:Tema= new Tema()
-listaTema:Tema[]
-  constructor(
-    private router:Router,
-    private temaService:TemaService
-    
-  ) { }
+  constructor() { }
 
-  ngOnInit() {
-    if(environment.token==''){
-      alert('Sua seção expirou,faça o login novamente.')
-      this.router.navigate(['/entrar'])
-
-    }
-
-    this.findAllTema()
+  ngOnInit(): void {
   }
 
-  findAllTema(){
-    this.temaService.getAllTema().subscribe((resp:Tema[])=>{
-      this.listaTema = resp
-    })
-  }
-
-  cadastrar(){
-    this.temaService.postTema(this.tema).subscribe((resp: Tema)=>{
-      this.tema = resp
-      alert('Tema cadastrado com  sucesso!')
-      this.findAllTema()
-      this.tema = new Tema()
-    })
-  }
 }
