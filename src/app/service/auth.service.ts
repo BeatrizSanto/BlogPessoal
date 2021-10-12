@@ -21,6 +21,11 @@ return this.http.post<UserLogin>('https://beatrizsantossblogpessoal.herokuapp.co
   cadastrar(user: User):Observable<User>{
     return this.http.post<User>('https://beatrizsantossblogpessoal.herokuapp.com/usuarios/cadastrar',user)
   }
+
+  getByIdUser(id: number) : Observable<User>{
+    return  this.http.get<User>(`https://beatrizsantossblogpessoal.herokuapp.com/usuarios/${id}`)
+  }
+
   logado(){
     let ok: Boolean = false
 

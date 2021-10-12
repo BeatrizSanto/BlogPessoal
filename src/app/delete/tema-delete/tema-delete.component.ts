@@ -13,6 +13,7 @@ export class TemaDeleteComponent implements OnInit {
 
   tema:Tema = new Tema()
   idTema :number
+
   constructor(
     private temaService: TemaService,
     private  router: Router,
@@ -23,6 +24,7 @@ export class TemaDeleteComponent implements OnInit {
     if(environment.token==''){
       this.router.navigate(['/entrar'])
     }
+    
     this.idTema = this.route.snapshot.params['id']
     this.findByIdTema(this.idTema)
   }
