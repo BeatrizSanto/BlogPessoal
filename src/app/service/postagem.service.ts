@@ -23,6 +23,11 @@ getByIdPostagem(id:number):Observable<Postagem>{
   return this.http.get<Postagem>(`https://beatrizsantossblogpessoal.herokuapp.com/postagens/${id}`,this.token)
 }
 
+getByTituloPostagem(titulo: string): Observable<Postagem[]>{
+  return this.http.get<Postagem[]>(`https://beatrizsantossblogpessoal.herokuapp.com/postagens/titulo/${titulo}`,this.token)
+}
+
+
 postPostagem(postagem: Postagem):Observable<Postagem>{
   return this.http.post<Postagem>('https://beatrizsantossblogpessoal.herokuapp.com/postagens',postagem,this.token)
 }
@@ -32,7 +37,7 @@ putPostagem(postagem:Postagem):Observable<Postagem>{
 }
 
 deletePostagem(id:number){
-  return this.http.delete('https://beatrizsantossblogpessoal.herokuapp.com/postagens',this.token)
+  return this.http.delete(`https://beatrizsantossblogpessoal.herokuapp.com/postagens/${id}`,this.token)
 }
 
 }
